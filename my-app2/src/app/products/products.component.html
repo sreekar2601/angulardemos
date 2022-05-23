@@ -1,0 +1,74 @@
+<button
+  class="btn btn-primary"
+  [disabled]="!allownewproduct"
+  (click)="onproductcreate()"
+>
+  Add Product
+</button>
+<p [innerText]="allownewproduct"></p>
+<p>{{ productcreationstatus }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col"><label>Product Name</label></div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        (input)="onupdateproduct($event)"
+      />
+    </div>
+    <div class="col">
+      <p>{{ productname }}</p>
+    </div>
+    <div class="row">
+      <div class="col"><label>Product Description</label></div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="productdescription"
+        />
+      </div>
+      <div class="col">
+        <p>{{ productdescription }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><label>Username</label></div>
+      <div class="col">
+        <input type="text" class="form-control" [(ngModel)]="username" />
+      </div>
+      <div class="col">
+        <p>{{ username }}</p>
+      </div>
+      <button
+        class="btn btn-primary"
+        [disabled]="!adduser"
+        (click)="onusercreate()"
+      >
+        Add User
+      </button>
+      <p>{{ userstatus }}</p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          class="btn btn-primary"
+          [disabled]="username === ''"
+          (click)="username = ''"
+        >
+          Reset
+        </button>
+      </div>
+      <div class="col"><label>UserName</label></div>
+      <div class="col">
+        <input type="text" class="form-control" [(ngModel)]="username" />
+      </div>
+      <div class="col">
+        <p>{{ username }}</p>
+      </div>
+    </div>
+  </div>
+
+  <app-product></app-product>
+</div>

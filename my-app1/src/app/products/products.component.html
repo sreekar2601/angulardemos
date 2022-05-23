@@ -1,0 +1,8 @@
+<app-cockpit (productadded)="onproductadded($event)"></app-cockpit>
+
+<div class="container">
+  <app-product
+    *ngFor="let product of products"
+    [productname]="product"
+  ></app-product>
+</div>
